@@ -1,4 +1,4 @@
-package com.example.mission2.basic;
+package com.example.mission2.basic.model;
 
 public class PostDto {
     private int postId;
@@ -6,18 +6,20 @@ public class PostDto {
     private String content;
     private String author;
     private int password;
-    private BoardDto boardDto;
+    private int boardId;
+    // 변수가 총 6가지 사용되었는데, getter/setter를 직접 작성하지 않아도 될 수 있도록 @lombok 라이브러리를 사용할 수도 있음
+    // 한 모델 클래스 내에 변수가 7개가 넘어가기 시작하면 변수 디자인이 잘 되었다고 보기 어려움
 
     public PostDto() {
     }
 
-    public PostDto(int postId, String title, String content, String author, int password, BoardDto boardDto) {
+    public PostDto(int postId, String title, String content, String author, int password, int boardId) {
         this.postId = postId;
         this.title = title;
         this.content = content;
         this.author = author;
         this.password = password;
-        this.boardDto = boardDto;
+        this.boardId = boardId;
     }
 
     public int getPostId() {
@@ -60,12 +62,12 @@ public class PostDto {
         this.password = password;
     }
 
-    public BoardDto getBoardDto() {
-        return boardDto;
+    public int getBoardId() {
+        return boardId;
     }
 
-    public void setBoardDto(BoardDto boardDto) {
-        this.boardDto = boardDto;
+    public void setBoardId(int boardId) {
+        this.boardId = boardId;
     }
 
     @Override
@@ -76,7 +78,18 @@ public class PostDto {
                 ", content='" + content + '\'' +
                 ", author='" + author + '\'' +
                 ", password=" + password +
-                ", boardDto=" + boardDto +
+                ", boardId=" + boardId +
                 '}';
+    }
+
+    public PostDto passwordMasked(){
+        return new PostDto(
+                this.postId,
+                this.title,
+                this.content,
+                this.author,
+                0000,
+                this.boardId
+        );
     }
 }

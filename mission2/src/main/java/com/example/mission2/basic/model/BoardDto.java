@@ -1,4 +1,4 @@
-package com.example.mission2.basic;
+package com.example.mission2.basic.model;
 
 public class BoardDto {
     private int boardId;

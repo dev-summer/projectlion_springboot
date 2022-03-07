@@ -4,4 +4,13 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/
+    url: jdbc:mysql://127.0.0.1:3306/mission3_basic
+    username: mission3_basic
+    password: 4hyesung*
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect

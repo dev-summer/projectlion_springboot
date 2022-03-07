@@ -10,6 +10,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="user_name")
     private String name;
     private Long password;
 
@@ -17,7 +18,6 @@ public class UserEntity {
             targetEntity = PostEntity.class,
             fetch = FetchType.LAZY,
             mappedBy = "userEntity")
-    @JoinColumn(name = "post_id")
     private Collection<PostEntity> postEntityList = new ArrayList<>();
 
     public UserEntity() {

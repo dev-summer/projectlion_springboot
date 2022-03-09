@@ -8,5 +8,6 @@
 
 ## GET /board/1/post/1
 > password를 Long타입으로 주고 요청을 보냈는데 패스워드에 대한 요청이 정상적으로 들어가지 않음.  
-> SQL에서 조회해도 똑같이 password가 null로 나온다. (해결 필요)
+> SQL에서 조회해도 똑같이 password가 null로 나온다. (해결 필요)  
+> entity가 아닌 title list를 불러오면 좋을 것 같은데 어떻게 할 수 있을지 찾아보자 (다른사람 코드도 참고해보기)
 <img width="949" alt="Screenshot 2022-03-09 at 14 47 18" src="https://user-images.githubusercontent.com/98260324/157380415-7b033ebf-7111-4857-af1b-329d24041e69.png">

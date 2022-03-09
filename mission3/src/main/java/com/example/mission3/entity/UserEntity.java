@@ -21,8 +21,6 @@ public class UserEntity {
             mappedBy = "userEntity")
     private Collection<PostEntity> postEntityList = new ArrayList<>();
 
-    private AreaEntity areaEntity;
-
     public UserEntity() {
     }
 
@@ -31,7 +29,6 @@ public class UserEntity {
         this.name = name;
         this.password = password;
         this.postEntityList = postEntityList;
-        this.areaEntity = areaEntity;
     }
 
     public Long getId() {
@@ -66,14 +63,6 @@ public class UserEntity {
         this.postEntityList = postEntityList;
     }
 
-    public AreaEntity getAreaEntity() {
-        return areaEntity;
-    }
-
-    public void setAreaEntity(AreaEntity areaEntity) {
-        this.areaEntity = areaEntity;
-    }
-
     @Override
     public String toString() {
         return "UserEntity{" +
@@ -81,7 +70,6 @@ public class UserEntity {
                 ", name='" + name + '\'' +
                 ", password=" + password +
                 ", postEntityList=" + postEntityList +
-                ", areaEntity=" + areaEntity +
                 '}';
     }
 }

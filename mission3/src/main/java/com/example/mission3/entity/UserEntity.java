@@ -1,6 +1,7 @@
 package com.example.mission3.entity;
 
 import javax.persistence.*;
+import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -20,14 +21,17 @@ public class UserEntity {
             mappedBy = "userEntity")
     private Collection<PostEntity> postEntityList = new ArrayList<>();
 
+    private AreaEntity areaEntity;
+
     public UserEntity() {
     }
 
-    public UserEntity(Long id, String name, Long password, Collection<PostEntity> postEntityList) {
+    public UserEntity(Long id, String name, Long password, Collection<PostEntity> postEntityList, AreaEntity areaEntity) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.postEntityList = postEntityList;
+        this.areaEntity = areaEntity;
     }
 
     public Long getId() {
@@ -62,6 +66,14 @@ public class UserEntity {
         this.postEntityList = postEntityList;
     }
 
+    public AreaEntity getAreaEntity() {
+        return areaEntity;
+    }
+
+    public void setAreaEntity(AreaEntity areaEntity) {
+        this.areaEntity = areaEntity;
+    }
+
     @Override
     public String toString() {
         return "UserEntity{" +
@@ -69,6 +81,7 @@ public class UserEntity {
                 ", name='" + name + '\'' +
                 ", password=" + password +
                 ", postEntityList=" + postEntityList +
+                ", areaEntity=" + areaEntity +
                 '}';
     }
 }

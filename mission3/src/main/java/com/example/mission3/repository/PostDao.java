@@ -27,6 +27,7 @@ public class PostDao {
         postEntity.setContent(dto.getContent());
         postEntity.setBoardEntity(dto.getBoardEntity());
         postEntity.setUserEntity(dto.getUserEntity());
+        postRepository.save(postEntity);
     }
 
     public PostEntity readPost(Long id){
